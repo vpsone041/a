@@ -1,14 +1,14 @@
+---
 kind: pipeline
 type: docker
-name: linux_amd64
-
-environment:
-  GOOS: linux
-  GOARCH: amd64
-  CGO_ENABLED: 0
-
+name: Building..
+node:
+  drone: ch1
+workspace:
+  path: /drone/src
+  path: lscpu
 steps:
-  - name: build-linux-amd64
-    image: golang:1.21.4
+  - name: build & push
+    image: golang
     commands:
-      - lscpu
+         - lscpu
